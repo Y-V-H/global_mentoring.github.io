@@ -7,7 +7,7 @@ const initialState = {
 };
 
 const fetchDataFromMovieAPI = async (sortByValue?:string) => {
-    const url = `http://localhost:4000/movies?sortOrder=asc${sortByValue ? `&sortBy=${sortByValue}` : ''}`;
+    const url = `${process.env.filmAPI}?sortOrder=asc${sortByValue ? `&sortBy=${sortByValue}` : ''}`;
     const response = await (await fetch(url)).json();
 
     return response.data;

@@ -20,8 +20,6 @@ interface ButtonIconProps {
     buttonName?: string;
 }
 
-
-
 export const ButtonIcon = ({icon, color, buttonSize, className, onClick, buttonName}:ButtonIconProps) => {
     return (
         <button

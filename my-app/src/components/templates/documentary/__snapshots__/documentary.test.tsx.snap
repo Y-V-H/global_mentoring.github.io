@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Comedy template 1`] = `
+<h1
+  className="a-header a-header--h1 undefined"
+>
+  Documentary page
+</h1>
+`;

@@ -1,6 +1,7 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
 import 'webpack-dev-server';
+import { EnvironmentPlugin } from 'webpack';
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -53,6 +54,9 @@ const config: webpack.Configuration = {
             title: "Application name",
             template: './src/index.html'
         }),
+        new EnvironmentPlugin({
+            filmAPI: 'http://localhost:4000/movies'
+        })
     ]
 }
 

@@ -8,7 +8,7 @@ interface LogoProps {
 
 export const Logo = ({className, onClick}: LogoProps) => {
     return (
-        <a href="#" className={clsx(`a-logo ${className}`)} onClick={onClick}>
+        <a href="/" className={clsx(`a-logo ${className}`)} onClick={onClick}>
             <b>netflix</b>roulette
         </a>
     );
