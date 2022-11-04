@@ -73,7 +73,7 @@ export const AddMovieForm = ({updateObject, toggleModalState}: any) => {
             };
 
             setSubmitting(false);
-            fetch('http://localhost:4000/movies', requestOptions)
+            fetch(process.env.filmAPI, requestOptions)
                 .then(async response => {
                     const data = await response.json();
                    

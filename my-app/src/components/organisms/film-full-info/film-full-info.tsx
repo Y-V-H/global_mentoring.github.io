@@ -1,61 +1,29 @@
 import React from 'react';
 import { Header } from '../../atoms/header/header';
-import { ButtonIcon } from '../../atoms/button-icon/button-icon';
-import { ButtonIconColor, ButtonIconSize } from '../../atoms/button-icon/button-icon';
-import { Logo } from '../../atoms/logo/logo';
-import { filmsDataProps } from '../../../toolkit-store/index';
-import { updateCurrentFilmData } from '../../../toolkit-store/sort-by-slice-reducer'; 
-import { useDispatch, useSelector  } from 'react-redux';
 
-// interface oneFilmData {
-//     'id': number;
-//     'title': string;
-//     'tagline': string;
-//     'vote_average': number;
-//     'vote_count': number;
-//     'release_date': string;
-//     'poster_path': string;
-//     'overview': string;
-//     'budget': number;
-//     'revenue': number;
-//     'genres': string[];
-//     'runtime': number;
-// }
-
-const selectCurrentFilmData = (state: filmsDataProps) => state.sortBySlice.currentFilm;
-
-export const FilmFullInfo = () => {
-    const currentFilmData = useSelector(selectCurrentFilmData);
-    const dispatch = useDispatch();
-
-    const handlerClickOnLogo = () => dispatch(updateCurrentFilmData(null));
+export const FilmFullInfo = ({movieInfo}: any) => {
+    if (!movieInfo) {
+        return <h1>Film was not found!</h1>
+    }
 
     return (
         <div className="container o-film-info">
-            <div className="o-film-info__header">
-                <Logo onClick={handlerClickOnLogo}/>
-                <ButtonIcon
-                    icon='icon-search'
-                    color={ButtonIconColor.PRIMARY}
-                    buttonSize={ButtonIconSize.MEDIUM}
-                />
-            </div>
             <div className="o-film-info__wr">
                 <div className="o-film-info__img">
-                    <img src={currentFilmData.poster_path} alt="" />
+                    <img src={movieInfo.poster_path} alt="" />
                 </div>
                 <div className="o-film-info__details">
                     <div className="o-film-info__details-header">
-                        <Header size='h1'>{currentFilmData.title}</Header>
-                        <span className='o-film-info__details-rating'>{currentFilmData.vote_average}</span>
-                        <span className='o-film-info__details-award'>{currentFilmData.tagline}</span>
+                        <Header size='h1'>{movieInfo.title}</Header>
+                        <span className='o-film-info__details-rating'>{movieInfo.vote_average}</span>
+                        <span className='o-film-info__details-award'>{movieInfo.tagline}</span>
                     </div>
                     <div className="o-film-info__details-date">
-                        <span>{currentFilmData.release_date}</span>
-                        <span>{currentFilmData.runtime} min</span>
+                        <span>{movieInfo.release_date}</span>
+                        <span>{movieInfo.runtime} min</span>
                     </div>
                     <div className="o-film-info__details-description">
-                        <p>{currentFilmData.overview}</p>
+                        <p>{movieInfo.overview}</p>
                     </div>
                 </div>
             </div>

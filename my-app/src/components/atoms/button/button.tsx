@@ -16,7 +16,7 @@ export const Button = ({
 }: ButtonProps) => {
     return (
         <button
-            className={clsx(`a-btn ${className}`)}
+            className={clsx(`a-btn`, className)}
             onClick={onClick}
             type={type || 'button'}
         >

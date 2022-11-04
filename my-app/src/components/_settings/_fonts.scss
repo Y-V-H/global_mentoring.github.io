@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'montserrat';
-    src: url('/assets/fonts/MontserratAlternates-Medium.woff') format('woff');
+    src: url('../../../assets/fonts/MontserratAlternates-Medium.woff') format('woff');
 }
 
 @font-face {
     font-family: 'montserrat-regular';
     src: local('Montserrat-Regular'),
         local('Montserrat Regular'),
-        url('/assets/fonts/Montserrat-Regular.woff') format('woff');
+        url('../../../assets/fonts/Montserrat-Regular.woff') format('woff');
     font-weight: 100 600;
 }
 
@@ -15,7 +15,7 @@
     font-family: 'montserrat-light';
     src: local('Montserrat-Light'),
         local('Montserrat Light'),
-        url('/assets/fonts/MontserratAlternates-Light.woff') format('woff');
+        url('../../../assets/fonts/MontserratAlternates-Light.woff') format('woff');
     font-weight: 100;
 }
 
@@ -23,13 +23,13 @@
     font-family: 'montserrat-bold';
     src: local('Montserrat-Bold'),
         local('Montserrat Bold'),
-        url('/assets/fonts/Montserrat-Bold.woff') format('woff');
+        url('../../../assets/fonts/Montserrat-Bold.woff') format('woff');
     font-weight: 900;
 }
 
 @font-face {
     font-family: 'fontello';
-    src: url('/assets/fonts/fontello.woff') format('woff2');
+    src: url('../../../assets/fonts/fontello.woff') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
